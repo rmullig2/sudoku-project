@@ -5,4 +5,9 @@ class UserTest < ActiveSupport::TestCase
     user = User.new
     assert_not user.save
   end
+  
+  test "cannot create a duplicate user" do
+    user = User.new(name: "derekj")
+    assert_not user.save
+  end
 end
