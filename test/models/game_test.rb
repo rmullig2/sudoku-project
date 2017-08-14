@@ -5,4 +5,9 @@ class GameTest < ActiveSupport::TestCase
     game = Game.new
     assert_not game.save
   end
+  
+  test "cannot create a game without specifying the level" do
+    game = Game.new(user_id: User.first.id)
+    assert_not game.save
+  end
 end
