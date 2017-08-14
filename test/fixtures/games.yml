@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  solution: 
+  start: 
+  current_state: 
+  score: 1
+  moves: 1
+
+two:
+  solution: 
+  start: 
+  current_state: 
+  score: 1
+  moves: 1
