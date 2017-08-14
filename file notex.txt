@@ -1,0 +1,77 @@
+README.md - documentation
+Rakefile - rake tasks
+config.ru - startup configuration for Rails server
+Gemfile - installed Gems
+
+config/
+	routes.rb - routes controller actions to views
+	secrets.yml - contains secret_key_base for testing and development (static), production (ENV value)
+	environment.rb - requires application.rb; required by config.ru
+	application.rb - requires boot.rb, frameworks, Gemfile gems, etc
+	puma.rb - configuration for app server: threads, port, concurrency, etc.
+	cable.yml - Action Cable configuration, allows WebSockets to be used for communication
+	spring.rb - preloader configuration, loaded after bundler
+	environments/ - these files have same settings as application.rb but override for specific environment
+		development.rb
+		test.rb
+		production.rb
+	locales/ - use for international settings
+		en.yml - English language settings
+	boot.rb - configure load path for Gem dependencies
+	database.yml - information for database connectivity in each enviroment
+	initializers/ - loaded after frameworks and gems
+		application_controller_renderer.rb - render templates without being in controller action
+		cors.rb - cross origin resource sharing; allow/disallow requests from certain origins (protocol, domain name, port)
+		inflections.rb - transforms words from singular to plural
+		new_framework_defaults.rb settings for migration to Rails 5.0
+		backtrace_silencers.rb - simplify backtrace output for easier debugging
+		filter_parameter_logging.rb - ensure sensitive data (passwords, etc) is not placed into log file
+		mime_types.rb - configure filename extensions for MIME types
+		wrap_parameters.rb - wrap received or sent requests in JSON
+
+db/
+	seeds.db - initialize database
+
+log/ - contains log files
+
+tmp/ - contains temporary files
+
+lib/ - application specific libraries
+	tasks/
+
+vendor/ - third party code
+
+test/
+	fixtures/ - sample data stored in yaml files
+		files/ - loaded by test_helper.rb into test database before each test
+	models/ - stores the model tests
+	mailers/ - tests for email functions
+	integration/ - interaction between application parts
+	controllers/ - tests for controller functionality
+	test_helper.rb - default test configuration
+
+app/
+	channels/ - configures an Action Cable channel
+	controllers/ - contains the controllers
+		concerns/ - shared code that is included in controller files
+	jobs/ - contain job files for tasks like cleanups, mailings, etc
+	mailers/ - send email
+		application_mailer.rb - customize base class for email
+	models/ - contain models
+		application_record.rb - customize base class for model
+		concerns/ - shared code that is included in model files
+	views/ - contain views
+		layouts/ - default html code
+
+public/ - files accessible to all users
+
+Gemfile.lock - created by running 'bundle install', ensures other developers use same third party code
+
+bin/ - wrappers around gem executables
+	bundle - manage gems
+	rails - start server, generate components
+	rake - execute predefined tasks
+	setup - ruby command to setup environment
+	spring - application preloader, keeps executables loaded for faster performance
+	update - updates development environment automatically
+
