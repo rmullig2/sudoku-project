@@ -10,4 +10,10 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(name: "derekj")
     assert_not user.save
   end
+  
+  test "can create a new game" do
+    user = User.create(name: "marianor")
+    user.games.create(level: 3)
+    assert_equal(1, user.games.count)
+  end
 end
