@@ -35,9 +35,14 @@ class GameTest < ActiveSupport::TestCase
       @game = Game.create(user_id: User.last.id, level: 2)
     end
     
-    test "solution should be defined as an array with nine sub arrays" do
+    test "solution should be defined as an array with lenght nine" do
       assert_equal(9, @game.solution.length)
     end
+    
+    test "each element in solution is an array of length nine" do
+      assert_equal(9, @game.solution[0].length)
+    end
+      
   end
   
 end
