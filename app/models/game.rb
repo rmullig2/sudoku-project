@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   belongs_to :user
   validates :level, presence: true
-  attr_reader :start
+  attr_reader :start, :score
   
   def initialize(user_id)
     super
@@ -10,5 +10,6 @@ class Game < ApplicationRecord
     @start = [ [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ],
                [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ],
                [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ]]
+    @score = 0
   end
 end
