@@ -21,4 +21,9 @@ class GameTest < ActiveSupport::TestCase
     game = Game.create(user_id: User.first.id, level: 1)
     assert_equal(0, game.score)
   end
+  
+  test "should initialize moves to zero" do
+    game = Game.create(user_id: User.last.id, level: 2)
+    assert_equal(0, game.moves)
+  end
 end
