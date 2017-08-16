@@ -40,7 +40,15 @@ class GameTest < ActiveSupport::TestCase
     end
     
     test "each element in solution is an array of length nine" do
-      assert_equal(9, @game.solution[0].length)
+      for i in 0..8
+        assert_equal(9, @game.solution[i].length)
+      end
+    end
+    
+    test "each of the nine array in the solution has nine unique elements" do
+      for i in 0..8
+        assert_equal(9, @game.solution[i].uniq.length)
+      end
     end
       
   end
