@@ -60,7 +60,7 @@ class Game < ApplicationRecord
           valid_cols.push(i)
         end
       end
-      binding.pry
+      #binding.pry
       while !(puzzle.include? num)
         row = valid_rows.sample
         col = valid_cols.sample
