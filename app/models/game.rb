@@ -22,56 +22,32 @@ class Game < ApplicationRecord
   end
   
   private
-    def self.initArrays(rows, cols, sol)
+    def self.shuffle
+      rows, cols = [], []
       for i in 0..8
-        rows[i] = BLANK.dup
-        cols[i] = BLANK.dup
-        sol[i] = BLANK.dup
+        rows[i] = @solution.row(i)
+        cols(i) = @solution.transpose.row(i)
       end
-    end
-    
-    def self.newSolution
-      rows = []
-      cols = []
-      sol = []
       
-      Game.initArrays(rows, cols, sol)
-      for num in 1..9
-        for puzzle in 0..8
-          row_num = puzzle / 3 * 3
-          col_num = puzzle % 3 * 3
-          # change to rows, cols, row_num, col_num
-          Game.placeNumber(num, sol[puzzle], rows, cols, row_num, col_num)
-        end
+      case rand(4)
+      when 0    # swap single rows
+        single_swap(rows)
+      when 1    # swap single columns
+        single_swap(cols)
+      when 2    # swap row groups
+        group_swap(rows)
+      when 3    # swap column groups
+        group_swap(cols)
       end
-      sol
     end
     
-    def self.placeNumber(num, puzzle, rows, cols, row_num, col_num)
-      valid_rows = []
-      valid_cols = []
-      for i in row_num..row_num+2
-        if !(rows[i].include? num)
-          valid_rows.push(i)
-        end
+    def single_swap(rows)
+#     Setup variables to be used in the shuffle
+      multiplier, excluded = rand(3), rand(3)
+      idx = [0,1,2].select do
+        |elem| != excluded
       end
-      for i in col_num..col_num+2
-        if !(cols[i].include? num)
-          valid_cols.push(i)
-        end
-      end
-      #binding.pry
-      while !(puzzle.include? num)
-        row = valid_rows.sample
-        col = valid_cols.sample
-        # figure out how to do this conversion  (row / 3 * 3) + (col % 3)
-        pos = (row % 3 * 3) + (col % 3)
-        if puzzle[pos].blank?
-          puzzle[pos] = num
-          rows[row][col] = num
-          cols[col][row] = num
-        end
-      end
+      rows[idx[0]*multiplier],rows[idx[1]*multiplier] = rows[idx[1]*multiplier],rows[idx[0]*multiplier]
     end
-  
+    
 end
