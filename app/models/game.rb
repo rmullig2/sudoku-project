@@ -18,8 +18,7 @@ class Game < ApplicationRecord
                [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ]]
     @score = 0
     @moves = 0
-    @solution = Matrix[*Solution.first.values]
-    #binding.pry
+    @solution = Matrix[*Solution.order("RANDOM()").first.values]
   end
   
   private
