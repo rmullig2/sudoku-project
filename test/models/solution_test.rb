@@ -13,7 +13,6 @@ class SolutionTest < ActiveSupport::TestCase
   end
   
   test "can create a valid solution" do
-    #binding.pry
     assert(@good_solution.save)
   end
   

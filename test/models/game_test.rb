@@ -36,18 +36,22 @@ class GameTest < ActiveSupport::TestCase
     end
     
     test "solution should be defined as an array with lenght nine" do
-      assert_equal(9, @game.solution.length)
+      assert_equal(9, @game.solution.rank)
     end
     
     test "each element in solution is an array of length nine" do
       for i in 0..8
-        assert_equal(9, @game.solution[i].length)
+        assert_equal(9, @game.solution.row(i).size)
       end
     end
     
     test "each of the nine array in the solution has nine unique elements" do
       for i in 0..8
-        assert_equal(9, @game.solution[i].uniq.length)
+        vect = []
+        for j in 0..8
+          vect.push(@game.solution.row(i)[j])
+        end
+        assert_equal(9, vect.uniq.length)            
       end
     end
       

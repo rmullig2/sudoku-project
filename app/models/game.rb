@@ -1,4 +1,5 @@
 require 'pry'
+require 'matrix'
 
 class Game < ApplicationRecord
   belongs_to :user
@@ -17,7 +18,7 @@ class Game < ApplicationRecord
                [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ]]
     @score = 0
     @moves = 0
-    @solution = Game.newSolution
+    @solution = Matrix[*Solution.first.values]
     #binding.pry
   end
   
