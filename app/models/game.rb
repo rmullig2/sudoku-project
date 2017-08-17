@@ -32,22 +32,39 @@ class Game < ApplicationRecord
       case rand(4)
       when 0    # swap single rows
         single_swap(rows)
+        @solution = Matrix[rows]
       when 1    # swap single columns
         single_swap(cols)
+        @solution = Matrix[cols]
+        @solution = @solution.transpose
       when 2    # swap row groups
         group_swap(rows)
+        @solution = Matrix[rows]
       when 3    # swap column groups
         group_swap(cols)
+        @solution = Matrix[cols]
+        @solution = @solution.transpose
       end
     end
     
-    def single_swap(rows)
+    def single_swap(vects)
 #     Setup variables to be used in the shuffle
-      multiplier, excluded = rand(3), rand(3)
+      multiplier, excluded = rand(3)*3, rand(3)
       idx = [0,1,2].select do
         |elem| != excluded
       end
-      rows[idx[0]*multiplier],rows[idx[1]*multiplier] = rows[idx[1]*multiplier],rows[idx[0]*multiplier]
+      vects[idx[0]+multiplier],vects[idx[1]+multiplier] = vects[idx[1]+multiplier],vects[idx[0]+multiplier]
+    end
+    
+    def group_swap(vects)
+#     Setup variables to be used in the shuffle
+      excluded = rand(3)
+      grps = [0,1,2].select do
+        |elem| != excluded
+      end
+      vects[grps[0]*3],vects[grps[1]*3] = vects[grps[1]*3],vects[grps[0]*3]
+      vects[grps[0]*3+1],vects[grps[1]*3+1] = vects[grps[1]*3+1],vects[grps[0]*3+1]
+      vects[grps[0]*3+2],vects[grps[1]*3+2] = vects[grps[1]*3+2],vects[grps[0]*3+2]
     end
     
 end
