@@ -6,9 +6,9 @@ class Game < ApplicationRecord
   validates :level, presence: true
   attr_accessor :start, :score, :moves, :solution
   
-  def initialize(user_id)
+  def initialize(level)
     super
-    @user_id = user_id
+    #user = User.find(user_id)
     @level = level
     @start = [ [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ],
                [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ], [ ['', '', ''], ['', '', ''], ['', '', ''] ],
@@ -17,7 +17,7 @@ class Game < ApplicationRecord
     @moves = 0
     @solution = Matrix[*Solution.order("RANDOM()").first.values]
     rand(10).times do
-      @solution.shuffle
+      shuffle
     end
   end
   
