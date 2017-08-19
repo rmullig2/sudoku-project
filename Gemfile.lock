@@ -135,6 +135,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack
   active_model_serializers
   byebug
   listen (~> 3.0.5)
