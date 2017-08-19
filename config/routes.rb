@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: { format: :json } do
       resources :users, param: :slug, only: [ :index, :create, :show ] do
-        #resources :games
+        resources :games, only: [:index]
       end
       #resources :games, only: :index
     end

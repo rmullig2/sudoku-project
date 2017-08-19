@@ -9,9 +9,12 @@ class RoutesTest < ActionDispatch::IntegrationTest
     assert_routing({ path: 'api/v1/users', method: :post }, { controller: 'api/v1/users', action: 'create', format: :json })
   end
     test "users_show_test" do
-    assert_routing({ path: 'api/v1/users/:slug', method: :get }, { format: :json, controller: 'api/v1/users', action: 'show', slug: :slug })
+    assert_routing({ path: 'api/v1/users/:slug', method: :get }, { format: :json, controller: 'api/v1/users', action: 'show', slug: ":slug" })
   end
 
+  test "games_index_test" do
+    assert_routing({ path: 'api/v1/users/:slug/games', method: :get }, { format: :json, controller: 'api/v1/games', action: 'index', user_slug: ":slug" })
+  end
 end
 
 
