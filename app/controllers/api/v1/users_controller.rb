@@ -3,4 +3,7 @@ class Api::V1::UsersController < ActionController::TestCase
     users = User.all
     render json: users
   end
+  
+  def create
+  end
 end
