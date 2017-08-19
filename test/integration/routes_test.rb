@@ -16,9 +16,9 @@ end
 
 
 
-
-
-# api_v1_user GET    /api/v1/users/:slug(.:format) api/v1/users#show {:format=>:json}
-#             PATCH  /api/v1/users/:slug(.:format) api/v1/users#update {:format=>:json}
-#             PUT    /api/v1/users/:slug(.:format) api/v1/users#update {:format=>:json}
-#             DELETE /api/v1/users/:slug(.:format) api/v1/users#destroy {:format=>:json}
+#api_v1_user_games GET    /api/v1/users/:user_slug/games(.:format)     api/v1/games#index {:format=>:json}
+#                  POST   /api/v1/users/:user_slug/games(.:format)     api/v1/games#create {:format=>:json}
+# api_v1_user_game GET    /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#show {:format=>:json}
+#                  PATCH  /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#update {:format=>:json}
+#                  PUT    /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#update {:format=>:json}
+#                  DELETE /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#destroy {:format=>:json}
