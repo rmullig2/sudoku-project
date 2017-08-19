@@ -10,4 +10,7 @@ class Api::V1::GamesController < ActionController::TestCase
   
   def update
   end
+  
+  def high
+  end
 end

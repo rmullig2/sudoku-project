@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :users, param: :slug, only: [ :index, :create, :show ] do
         resources :games, only: [:index, :create, :show, :update]
       end
-      #resources :games, only: :index
+      get 'high_scores', to: 'games#high'
     end
   end
 end
