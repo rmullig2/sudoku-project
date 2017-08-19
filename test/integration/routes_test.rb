@@ -21,10 +21,10 @@ class RoutesTest < ActionDispatch::IntegrationTest
   test "games_show_test" do
     assert_routing({ path: 'api/v1/users/:user_slug/games/:id', method: :get }, { format: :json, controller: 'api/v1/games', action: 'show', user_slug: ":user_slug", id: ":id" })
   end
+  test "games_update_test" do
+    assert_routing({ path: 'api/v1/users/:user_slug/games/:id', method: :patch }, { format: :json, controller: 'api/v1/games', action: 'update', user_slug: ":user_slug", id: ":id" })
+  end
 end
 
 
-# api_v1_user_game GET    /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#show {:format=>:json}
 #                  PATCH  /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#update {:format=>:json}
-#                  PUT    /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#update {:format=>:json}
-#                  DELETE /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#destroy {:format=>:json}
