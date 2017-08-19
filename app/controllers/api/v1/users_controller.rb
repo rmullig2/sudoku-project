@@ -6,4 +6,7 @@ class Api::V1::UsersController < ActionController::TestCase
   
   def create
   end
+  
+  def show
+  end
 end
