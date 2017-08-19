@@ -18,10 +18,12 @@ class RoutesTest < ActionDispatch::IntegrationTest
   test "games_create_test" do
     assert_routing({ path: 'api/v1/users/:user_slug/games', method: :post }, { format: :json, controller: 'api/v1/games', action: 'create', user_slug: ":user_slug" })
   end
+  test "games_show_test" do
+    assert_routing({ path: 'api/v1/users/:user_slug/games/:id', method: :get }, { format: :json, controller: 'api/v1/games', action: 'show', user_slug: ":user_slug", id: ":id" })
+  end
 end
 
 
-#                  POST   /api/v1/users/:user_slug/games(.:format)     api/v1/games#create {:format=>:json}
 # api_v1_user_game GET    /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#show {:format=>:json}
 #                  PATCH  /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#update {:format=>:json}
 #                  PUT    /api/v1/users/:user_slug/games/:id(.:format) api/v1/games#update {:format=>:json}
