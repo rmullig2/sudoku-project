@@ -1,4 +1,4 @@
-class Api::V1::GamesController < ActionController::TestCase
+class Api::V1::GamesController < ApplicationController
   def index
   end
   
@@ -12,5 +12,7 @@ class Api::V1::GamesController < ActionController::TestCase
   end
   
   def high
+    games = Game.all
+    render json: games
   end
 end

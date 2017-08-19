@@ -25,6 +25,3 @@ class RoutesTest < ActionDispatch::IntegrationTest
     assert_routing({ path: 'api/v1/high_scores', method: :get }, { format: :json, controller: 'api/v1/games', action: 'high' })
   end
 end
-
-
-     #api_v1_high_scores GET   /api/v1/high_scores(.:format)                api/v1/games#high {:format=>:json}
