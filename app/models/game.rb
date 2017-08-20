@@ -6,10 +6,10 @@ class Game < ApplicationRecord
   validates :level, presence: true
   attr_accessor :start, :score, :moves, :solution
   
-  def initialize(level)
+  def initialize(params)
     super
     #user = User.find(user_id)
-    @level = level
+    @level = params[:level]
     @start = [ ['', '', '', '', '', '', '', '', ''], ['', '', '', '', '', '', '', '', ''], ['', '', '', '', '', '', '', '', ''],
                ['', '', '', '', '', '', '', '', ''], ['', '', '', '', '', '', '', '', ''], ['', '', '', '', '', '', '', '', ''],
                ['', '', '', '', '', '', '', '', ''], ['', '', '', '', '', '', '', '', ''], ['', '', '', '', '', '', '', '', '']]
@@ -20,7 +20,7 @@ class Game < ApplicationRecord
     rand(10).times do
       shuffle
     end
-    create_start
+    @start = create_start(@start)
   end
   
     def shuffle
@@ -70,14 +70,18 @@ class Game < ApplicationRecord
       vects[grps[0]*3+2],vects[grps[1]*3+2] = vects[grps[1]*3+2],vects[grps[0]*3+2]
     end
     
-    def create_start
+    def create_start(arr)
       reveal = []
-      while reveal.length < 27
+      num_shown = 37 - @level * 3
+      while reveal.length < num_shown
         n = rand(81)
-        !reveal.include? n && reveal.push(n)
+        if !reveal.include? n
+          reveal.push(n)
+        end
       end
       for i in reveal
-        @start[i/9][i%9] = @solution.element(i/9,i%9)
+        arr[i/9][i%9] = @solution.element(i/9,i%9)
       end
+      arr
     end
 end
