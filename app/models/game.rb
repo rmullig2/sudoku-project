@@ -20,6 +20,7 @@ class Game < ApplicationRecord
     rand(10).times do
       shuffle
     end
+    create_start
   end
   
     def shuffle
@@ -69,4 +70,14 @@ class Game < ApplicationRecord
       vects[grps[0]*3+2],vects[grps[1]*3+2] = vects[grps[1]*3+2],vects[grps[0]*3+2]
     end
     
+    def create_start
+      reveal = []
+      while reveal.length < 27
+        n = rand(81)
+        !reveal.include? n && reveal.push(n)
+      end
+      for i in reveal
+        @start[i] = @solution[i]
+      end
+    end
 end
