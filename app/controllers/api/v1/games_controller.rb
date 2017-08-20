@@ -7,7 +7,7 @@ class Api::V1::GamesController < ApplicationController
   
   def create
     user = User.find_by_slug(params[:name])
-    game = user.create(level: params[:level])
+    game = user.games.create(level: params[:level])
     render json: game
   end
   
