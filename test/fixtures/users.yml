@@ -2,6 +2,8 @@
 
 derek:
   name: derekj
+  password: password
 
 alex:
   name: alexr
+  password: password
