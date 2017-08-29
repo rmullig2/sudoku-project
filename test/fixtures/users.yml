@@ -2,8 +2,8 @@
 
 derek:
   name: derekj
-  password: password
+  password_digest: <%= BCrypt::Password.create('testpassword', cost: 5) %>
 
 alex:
   name: alexr
-  password: password
+  password_digest: <%= BCrypt::Password.create('testpassword', cost: 5) %>
