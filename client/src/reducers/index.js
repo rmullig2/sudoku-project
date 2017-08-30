@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-//import catsReducer from './cats_reducer'
+import authReducer from './auth_reducer'
 
 var rootReducer = combineReducers({
-  //cats: catsReducer,
+  auth: authReducer,
 });
 
 export default rootReducer
