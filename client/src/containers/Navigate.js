@@ -1,0 +1,54 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import * as Actions from '../actions';
+
+class Navigate extends React.Component {
+    handleSignout() {
+        this.props.signOutUser();
+    }
+    
+    renderAuthLinks() {
+        if (this.props.authenticated) {
+            return [
+                <li className="nav-item" key={1}>
+                    <Link className="nav-link" to="../components/user">User Page</Link>
+                </li>,
+                <li className="nav-item" key={2}>
+                    <Link className="nav-link" href="a" onclick={() => this.handleSignout()}>Sign Out</Link>
+                </li>
+            ]
+        } else {
+            return [
+                <li className="nav-item" key={1}>
+                    <Link className="nav-link" to="../components/login">Login</Link>
+                </li>,
+                <li className="nav-item" key={2}>
+                    <Link className="nav-link" to="../components/signup">Sign Up</Link>
+                </li>
+            ]
+        }
+    }
+    render() {
+        return (
+            <nav className="navbar navbar-default">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <Link to="/" className="navbar-brand" >React2Gifs</Link>
+                    </div>
+                    <ul className="nav navbar-nav navbar-right">
+                        { this.renderAuthLinks() }
+                    </ul>
+                </div>
+            </nav>
+        );
+    }
+}
+
+function mapStateToProps(state) {
+    return {
+        authenticated: state.auth.authenticated
+    }
+}
+
+export default connect(mapStateToProps, Actions)(Navigate);
