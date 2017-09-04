@@ -12,7 +12,7 @@ class Navigate extends React.Component {
         if (this.props.authenticated) {
             return [
                 <li className="nav-item" key={1}>
-                    <Link className="nav-link" to="../components/user">User Page</Link>
+                    <Link className="nav-link" to="/user">User Page</Link>
                 </li>,
                 <li className="nav-item" key={2}>
                     <Link className="nav-link" href="a" onclick={() => this.handleSignout()}>Sign Out</Link>
@@ -21,10 +21,10 @@ class Navigate extends React.Component {
         } else {
             return [
                 <li className="nav-item" key={1}>
-                    <Link className="nav-link" to="../components/login">Login</Link>
+                    <Link className="nav-link" to="/login">Login</Link>
                 </li>,
                 <li className="nav-item" key={2}>
-                    <Link className="nav-link" to="../components/signup">Sign Up</Link>
+                    <Link className="nav-link" to="/signup">Sign Up</Link>
                 </li>
             ]
         }
