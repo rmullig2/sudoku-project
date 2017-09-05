@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './containers/Home';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/index';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import User from './components/User';
+
 //import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -14,7 +18,10 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
     <Provider store={store} >
       <Router history={browserHistory}>
-        <Route path="/" component={App} />
+        <Route exact path="/" component={ Home } />
+        <Route path="/login" component={ Login } />
+        <Route path="/signup" component={ Signup } />
+        <Route path="/user" component={ User } />
       </Router>
     </Provider>, document.getElementById('root')
 );
