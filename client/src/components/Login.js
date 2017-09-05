@@ -18,7 +18,7 @@ const Login = (props) => {
     <div className="container">
       <div className="col-md-6 col-md-offset-3">
         <h2 className="text-center">Log In</h2>
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={handleFormSubmit()}>
           <fieldset className="form-group">
             <label>Email</label>
             <Field name="email" component="input" className="form-control" type="text" placeholder="Email"/>
