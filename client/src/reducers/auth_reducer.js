@@ -1,9 +1,3 @@
-const defaultState = {
-    isLoggedIn: false,
-    username: '',
-    password: ''
-};
- 
 export default function authReducer(state = defaultState, action) {
     switch (action.type) {
         case 'LOGIN': 

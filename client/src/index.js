@@ -12,8 +12,13 @@ import Signup from './components/Signup';
 import User from './components/User';
 
 //import registerServiceWorker from './registerServiceWorker';
+const defaultState = {
+    isLoggedIn: false,
+    username: '',
+    password: ''
+};
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store} >
