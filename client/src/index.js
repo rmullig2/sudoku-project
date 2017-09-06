@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './containers/Home';
+import App from './containers/App';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
@@ -23,7 +23,8 @@ const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
 ReactDOM.render(
     <Provider store={store} >
       <Router history={browserHistory}>
-        <Route exact path="/" component={ Home } />
+        <App />
+        <Route exact path="/" component={ App } />
         <Route path="/login" component={ Login } />
         <Route path="/signup" component={ Signup } />
         <Route path="/user" component={ User } />

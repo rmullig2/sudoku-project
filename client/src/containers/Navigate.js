@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as Actions from '../actions';
+import * as Actions from '../actions/authActions';
 
 class Navigate extends React.Component {
     handleSignout() {
