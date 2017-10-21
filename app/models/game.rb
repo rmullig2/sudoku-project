@@ -28,21 +28,20 @@ attr_accessor :start, :solution
         cols[i] = @solution.transpose[i]
       end
       
-      case rand(1)
+      case rand(5)
       when 0    # swap single rows
         single_swap(rows)
         @solution = rows
       when 1    # swap single columns
         single_swap(cols)
-        #@solution = Matrix[*cols]
         @solution = cols
         @solution = @solution.transpose
       when 2    # swap row groups
         group_swap(rows)
-        @solution = Matrix[*rows]
+        @solution = rows
       when 3    # swap column groups
         group_swap(cols)
-        @solution = Matrix[*cols]
+        @solution = cols
         @solution = @solution.transpose
       when 4    # transpose rows and columns
         @solution = @solution.transpose
