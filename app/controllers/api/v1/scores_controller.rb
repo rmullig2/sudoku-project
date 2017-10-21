@@ -1,0 +1,11 @@
+class Api::V1::ScoresController < ApplicationController
+  def index
+    scores = Score.order(time: :desc).limit(10)
+    render json: scores
+  end
+  
+  def create
+    score = Score.create(name: params[:name], score: params[:score])
+    render score
+  end
+end

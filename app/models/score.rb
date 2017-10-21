@@ -1,5 +1,5 @@
 class Score < ApplicationRecord
   validates :name, presence: true, length: { is: 3 }
-  validates :score, presence: true
-  attr_accessor :name, :score
+  validates :time, presence: true
+  #attr_accessor :name, :time
 end
