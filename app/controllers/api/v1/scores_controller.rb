@@ -5,7 +5,7 @@ class Api::V1::ScoresController < ApplicationController
   end
   
   def create
-    score = Score.create(name: params[:name], score: params[:score])
+    score = Score.create(name: params[:name], time: params[:time])
     render score
   end
 end

@@ -1,6 +1,7 @@
 class Api::V1::GamesController < ApplicationController
   def create
-    game = Games.new()
+    game = Game.new()
+    #binding.pry
     render json: game
   end
 end
