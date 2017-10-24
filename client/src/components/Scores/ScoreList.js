@@ -6,7 +6,7 @@ const ScoreList = ( {scores} ) =>
     {scores.forEach(
       (score) =>
         <li key={score.id.toString()}>
-          <Score {score} />
+          <Score {...score} />
         </li>
     )}
   </ol>
