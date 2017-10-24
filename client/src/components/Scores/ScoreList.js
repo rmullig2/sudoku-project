@@ -3,7 +3,7 @@ import Score from './Score.js'
 
 const ScoreList = ( {scores} ) =>
   <ol>
-    {scores.forEach(
+    {scores.map(
       (score) =>
         <li key={score.id.toString()}>
           <Score {...score} />

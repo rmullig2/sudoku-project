@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import History from '../components/About/History.js'
 import Rules from '../components/About/Rules.js'
 
@@ -8,7 +8,8 @@ class About extends React.Component {
       <div>
         <History />
         <Rules />
-        <a href="/">Home</a>
+        <a href="/">Home </a>
+        <a href="/scores">High Scores</a>
       </div>
     )
   }

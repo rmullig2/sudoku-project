@@ -16,7 +16,8 @@ class App extends Component {
         <p className="App-intro">
           Click new game to get started or about to learn more about Sudoku.
         </p>
-        <a href="/about">About</a>
+        <a href="/about">About </a>
+        <a href="/scores">High Scores</a>
       </div>
     );
   }
