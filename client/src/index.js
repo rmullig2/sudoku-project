@@ -34,3 +34,5 @@ ReactDOM.render(
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 //registerServiceWorker();
+
+// Change the defaultState to initialize board, start, solution, time, solved, and score
