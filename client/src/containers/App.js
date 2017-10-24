@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import logo from '../sudoku.png';
 import { connect } from 'react-redux';
 import '../App.css';
 import * as Actions from '../actions/authActions';
@@ -11,11 +11,12 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Sudoku</h2>
+          <h1>Welcome to Sudoku</h1>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Click new game to get started or about to learn more about Sudoku.
         </p>
+        <a href="/about">About</a>
       </div>
     );
   }

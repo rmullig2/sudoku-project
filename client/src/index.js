@@ -10,6 +10,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import User from './components/User';
+import About from './containers/About';
 
 //import registerServiceWorker from './registerServiceWorker';
 const defaultState = {
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="/login" component={ Login } />
         <Route path="/signup" component={ Signup } />
         <Route path="/user" component={ User } />
+        <Route path="/about" component={ About } />
       </Router>
     </Provider>, document.getElementById('root')
 );
