@@ -15,9 +15,12 @@ import Scores from './containers/Scores';
 
 //import registerServiceWorker from './registerServiceWorker';
 const defaultState = {
-    isLoggedIn: false,
-    username: '',
-    password: ''
+    high_scores: [],
+    current_board: [],
+    solution: [],
+    start_board: [],
+    solved: false,
+    start_time: null
 };
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));

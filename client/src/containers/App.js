@@ -23,11 +23,11 @@ class App extends Component {
   }
 }
 
-//export default App;
-function mapStateToProps(state) {
-    return {
-        authenticated: state.auth.authenticated
-    }
-}
-
-export default connect(mapStateToProps, Actions)(App);
+export default App;
+//function mapStateToProps(state) {
+//    return {
+//        authenticated: state.auth.authenticated
+//    }
+//}
+//
+//export default connect(mapStateToProps, Actions)(App);
