@@ -12,6 +12,7 @@ import Signup from './components/Signup';
 import User from './components/User';
 import About from './containers/About';
 import Scores from './containers/Scores';
+import Game from './containers/Game';
 
 //import registerServiceWorker from './registerServiceWorker';
 const defaultState = {
@@ -36,6 +37,7 @@ ReactDOM.render(
         <Route path="/user" component={ User } />
         <Route path="/about" component={ About } />
         <Route path="/scores" component={ Scores } />
+        <Route path="/game" component={ Game } />
       </Router>
     </Provider>, document.getElementById('root')
 );

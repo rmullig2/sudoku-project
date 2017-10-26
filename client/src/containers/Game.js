@@ -1,5 +1,6 @@
 import React from 'react'
 import Board from './Board.js'
+import Status from '../components/Game/Status.js'
 
 class Game extends React.Component {
   render() {
@@ -9,15 +10,14 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-status">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
+          <Status />
         </div>
       </div>
     );
   }
 }
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+//ReactDOM.render(
+//  <Game />,
+//  document.getElementById('root')
+//);
