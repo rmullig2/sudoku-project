@@ -3,7 +3,7 @@ import ScoreList from '../components/Scores/ScoreList.js'
 
 //const scores = [{ id: 2, name: 'dvw', time: 45289 },  { id: 1, name: 'ray', time: 35678 } ]
 var scores = []
-const url = "http://localhost:3000/api/v1/high_scores"
+const url = "http://localhost:3001/api/v1/high_scores"
 fetch(url)
   .then((resp) => resp.json())
   .then(function(data) {

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import scoresReducer from './scores_reducer'
-import { reducer as FormReducer } from 'redux-form';
+import boardReducer from './board_reducer';
 
 var rootReducer = combineReducers({
   scores: scoresReducer,
-  form: FormReducer
+  board: boardReducer
 });
 
 export default rootReducer
