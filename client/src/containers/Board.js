@@ -1,5 +1,4 @@
 import React from 'react'
-import './Board.css'
 import Square from '../components/Game/Square.js'
 
 class Board extends React.Component {
