@@ -17,7 +17,7 @@ import Scores from './containers/Scores';
 const defaultState = {
     high_scores: [],
     current_board: [],
-    solution: [],
+    solution_board: [],
     start_board: [],
     solved: false,
     start_time: null
