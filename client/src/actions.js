@@ -14,7 +14,7 @@ export const enterValue = (array_index, value) => {
 
 export const solutionCheck = (current_board, solution_board) => {
   return {
-    type: SOLUTION_CHECK, solved
+    type: SOLUTION_CHECK
   }
 }
 

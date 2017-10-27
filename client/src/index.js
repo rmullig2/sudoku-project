@@ -13,6 +13,7 @@ import User from './components/User';
 import About from './containers/About';
 import Scores from './containers/Scores';
 import Game from './containers/Game';
+import getScore from './actions.js';
 
 //import registerServiceWorker from './registerServiceWorker';
 const defaultState = {
@@ -25,7 +26,8 @@ const defaultState = {
 };
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
-console.log(store.getState())
+//store.dispatch(getScore)
+console.log("Store: " + store.getState())
 
 ReactDOM.render(
     <Provider store={store} >

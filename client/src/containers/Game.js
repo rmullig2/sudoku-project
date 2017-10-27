@@ -17,6 +17,8 @@ class Game extends React.Component {
   }
 }
 
+export default Game
+
 //ReactDOM.render(
 //  <Game />,
 //  document.getElementById('root')

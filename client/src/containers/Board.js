@@ -5,6 +5,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.keyPress = this.keyPress.bind(this);
+//    Call dispatch(newGame)
     this.state = {
       squares: Array(81).fill(""),
     };
@@ -14,6 +15,7 @@ class Board extends React.Component {
     console.log(event.key)
     let square = event.target.id
     const squares = this.state.squares.slice();
+//    Change the following code to call a dispatch(enterValue(event.target.id, event.key)) 
     squares[square] = event.key
     console.log(squares[square])
     if (event.key > 0 && event.key < 10)
@@ -139,3 +141,5 @@ class Board extends React.Component {
     );
   }
 }
+
+export default Board
