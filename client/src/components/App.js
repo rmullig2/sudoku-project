@@ -1,17 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
-import { connect } from 'react-redux';
 import '../App.css';
 //import * as Actions from '../actions/authActions';
 import About from '../containers/About';
 import Scores from '../containers/Scores';
 import Game from '../containers/Game';
-import Board from '../containers/Board';
 import Home from './Home.js';
 
 const App = ({ store }) => {
-  const test = store;
+  const test = store.getState();
   return (
     <div>
       <div>{console.log("App store: ")}</div>

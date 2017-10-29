@@ -9,6 +9,7 @@ class About extends React.Component {
         <History />
         <Rules />
         <a href="/">Home </a>
+        <a href="/game">Play </a>
         <a href="/scores">High Scores</a>
       </div>
     )

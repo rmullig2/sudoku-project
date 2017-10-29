@@ -8,9 +8,6 @@ import rootReducer from './reducers/index';
 import thunk from 'redux-thunk';
 
 let store = createStore(rootReducer, {}, applyMiddleware(thunk));
-console.log("Index store: ")
-console.log(store.getState())
-console.log(store)
 
 ReactDOM.render(
   <App store={store}/>,
