@@ -9,11 +9,8 @@ import Game from '../containers/Game';
 import Home from './Home.js';
 
 const App = ({ store }) => {
-  const test = store.getState();
   return (
     <div>
-      <div>{console.log("App store: ")}</div>
-      <div>{console.log(test)}</div>
       <Provider store={store} >
         <Router history={browserHistory}>
           <Route exact path="/" component={ Home } />
