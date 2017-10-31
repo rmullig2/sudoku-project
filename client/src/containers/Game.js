@@ -25,9 +25,7 @@ class Game extends React.Component {
 //export default Game
 
 function mapStateToProps(state){
-  return { current_board: state.board.current_board, start_board: state.board.start_board,
-          solution_board: state.board.solution_board, start_time: state.board.start_time,
-          solved: state.board.solved }
+  return { board: state.board }
 }
 export default connect(mapStateToProps)(Game)
 
