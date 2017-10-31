@@ -2,12 +2,14 @@ import React from 'react'
 import Board from './Board.js'
 import Status from '../components/Game/Status.js'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import { newGame } from '../actions.js';
-
+import { NewGame } from '../api/NewGame.js';
 
 class Game extends React.Component {
   render() {
-    this.props.dispatch(newGame);
+    this.props.NewGame();
+    //this.props.dispatch(newGame);
     console.log(this.props);
     return (
       <div className="game">
@@ -23,11 +25,14 @@ class Game extends React.Component {
 }
 
 //export default Game
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({NewGame: NewGame}, dispatch)
+}
 
 function mapStateToProps(state){
   return { board: state.board }
 }
-export default connect(mapStateToProps)(Game)
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
 
 //ReactDOM.render(
 //  <Game />,
