@@ -34,7 +34,8 @@ class Board extends React.Component {
 
   render() {
     const status = 'Game in progress';
-
+    console.log("Board props");
+    console.log(this.props);
     return (
       <div>
         <div className="status">{status}</div>
