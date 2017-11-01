@@ -8,8 +8,3 @@ export function NewGame() {
       .then((json) => dispatch(newGame(json.start, json.solution)));
   };
 }
-
-//export function NewGame() {
-//  fetch('http://localhost:3001/api/v1/game')
-//  .then(function(response) { return response.json(); })
-//}

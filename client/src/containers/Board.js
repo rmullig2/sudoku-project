@@ -1,5 +1,6 @@
 import React from 'react'
 import Square from '../components/Game/Square.js'
+import { connect } from 'react-redux';
 
 class Board extends React.Component {
   constructor(props) {
@@ -23,10 +24,15 @@ class Board extends React.Component {
     }
   
   renderSquare(i) {
+    console.log(this.props.board)
+    if (this.props.board.start_board[i]) {
+      return (<td>{this.props.board.solution_board[i]}</td>)
+    }
     return (
       <Square
         id={i}
-        value={this.state.squares[i]}
+        //value={this.state.squares[i]}
+        value={this.props.board.current_board[i]}
         onKeyPress={this.keyPress}
       />
     );
@@ -34,8 +40,8 @@ class Board extends React.Component {
 
   render() {
     const status = 'Game in progress';
-    console.log("Board props");
-    console.log(this.props);
+    //console.log("Board props");
+    //console.log(this.props);
     return (
       <div>
         <div className="status">{status}</div>
@@ -143,4 +149,9 @@ class Board extends React.Component {
   }
 }
 
-export default Board
+function mapStateToProps(state){
+  return { board: state.board }
+}
+
+export default connect(mapStateToProps)(Board)
+//export default Board

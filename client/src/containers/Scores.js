@@ -5,13 +5,15 @@ import { bindActionCreators } from 'redux'
 import { FetchScores } from '../api/FetchScores.js';
 
 class Scores extends React.Component {
-  render() {
+  componentWillMount() {
     this.props.FetchScores();
+  }
+  render() {
     const test = [ { id: 1, name: "ray", time: 35678 }, { id: 2, name: "dvw", time: 45289 } ]
     return(
       <div>
         <p>{console.log(this.props.high_scores)}</p>
-        <ScoreList scores={test } />
+        <ScoreList scores={test} />
         <a href="/">Home </a>
         <a href="/game">Play </a>
         <a href="/about">About </a>
