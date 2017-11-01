@@ -27,16 +27,11 @@ class Board extends React.Component {
   renderSquare(i) {
     console.log(this.props.board)
     if (this.props.board.start_board[i]) {
-      return (<td>{this.props.board.solution_board[i]}</td>)
+      return (<Square id={i} value={this.props.board.solution_board[i]} />)
     }
-    return (
-      <Square
-        id={i}
-        //value={this.state.squares[i]}
-        value={this.props.board.current_board[i]}
-        onKeyPress={this.keyPress}
-      />
-    );
+    else{
+      return (<Square id={i} value={this.props.board.current_board[i]} onKeyPress={this.keyPress} />
+    )};
   }
 
   render() {
