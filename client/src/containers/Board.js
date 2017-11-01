@@ -1,6 +1,7 @@
 import React from 'react'
 import Square from '../components/Game/Square.js'
 import { connect } from 'react-redux';
+import './board.css'
 
 class Board extends React.Component {
   constructor(props) {
