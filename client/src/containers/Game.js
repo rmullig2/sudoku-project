@@ -7,7 +7,7 @@ import { NewGame } from '../api/NewGame.js';
 
 class Game extends React.Component {
   componentWillMount() {
-    this.props.NewGame();
+      this.props.NewGame();
   }
   render() {
     return (
@@ -18,6 +18,9 @@ class Game extends React.Component {
         <div className="game-status">
           <Status />
         </div>
+        <a href="/">Home </a>
+        <a href="/about">About </a>
+        <a href="/scores">Scores </a>
       </div>
     );
   }

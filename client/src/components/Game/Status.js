@@ -1,6 +1,6 @@
 import React from 'react'
 
 const Status = () =>
-  <p>Testing</p>
+  <div>Testing</div>
 
 export default Status
