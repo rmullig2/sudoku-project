@@ -4,6 +4,7 @@ import Status from '../components/Game/Status.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { NewGame } from '../api/NewGame.js';
+import './game.css';
 
 class Game extends React.Component {
   componentWillMount() {
@@ -12,15 +13,17 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        <div className="game-board">
+        <div id="game-board">
           <Board />
         </div>
-        <div className="game-status">
+        <div id="game-status">
           <Status />
         </div>
-        <a href="/">Home </a>
-        <a href="/about">About </a>
-        <a href="/scores">Scores </a>
+        <div id="links">
+          <a href="/">Home </a>
+          <a href="/about">About </a>
+          <a href="/scores">Scores </a>
+        </div>
       </div>
     );
   }

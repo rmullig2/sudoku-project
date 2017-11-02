@@ -1,0 +1,30 @@
+#game-board {
+  display: block;
+}
+
+.game-bak {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#game-status {
+  color: red;
+  margin-left: 40%;
+  margin-top: 10px;
+}
+
+#links {
+  margin-top: 20px;
+  margin-left: 27%;
+}
+
+.game {
+  display: block;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
