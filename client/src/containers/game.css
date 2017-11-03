@@ -2,10 +2,8 @@
   display: block;
 }
 
-.game-bak {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
+.link {
+  margin-right: 3px;
 }
 
 #game-status {

@@ -2,32 +2,31 @@ import React from 'react'
 import Square from '../components/Game/Square.js'
 import { connect } from 'react-redux';
 import './board.css'
+import { enterValue } from '../actions.js';
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.keyPress = this.keyPress.bind(this);
 //    Call dispatch(newGame)
-    this.state = {
-      squares: Array(81).fill(""),
-    };
+    //this.state = {
+    //  squares: Array(81).fill(""),
+    //};
   }
   
   keyPress = (event) => {
-    console.log(event.key)
-    let square = event.target.id
-    const squares = this.state.squares.slice();
-//    Change the following code to call a dispatch(enterValue(event.target.id, event.key)) 
-    squares[square] = event.key
-    console.log(squares[square])
-    if (event.key > 0 && event.key < 10)
-      this.setState({squares: squares})
+    console.log(this)
+    if (event.key > 0 && event.key < 10) {
+      console.log(event.target.id)
+      console.log(event.key)
+      this.props.dispatch(enterValue(event.target.id, parseInt(event.key)))
     }
+  }
   
   renderSquare(i) {
-    console.log(this.props.board)
+    //console.log(this.props.board)
     if (this.props.board.start_board[i]) {
-      return (<Square id={i} value={this.props.board.solution_board[i]} />)
+      return (<Square id={i} value={this.props.board.start_board[i]} />)
     }
     else{
       return (<Square id={i} value={this.props.board.current_board[i]} onKeyPress={this.keyPress} />
@@ -36,8 +35,6 @@ class Board extends React.Component {
 
   render() {
     const status = 'Game in progress';
-    //console.log("Board props");
-    //console.log(this.props);
     return (
       <div>
         <div className="status">{status}</div>
@@ -150,4 +147,3 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(Board)
-//export default Board
