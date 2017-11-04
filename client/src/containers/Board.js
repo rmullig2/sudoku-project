@@ -3,6 +3,7 @@ import Square from '../components/Game/Square.js'
 import { connect } from 'react-redux';
 import './board.css'
 import { enterValue } from '../actions.js';
+//import RenderSquare from '../components/Game/RenderSquare.js';
 
 class Board extends React.Component {
   constructor(props) {

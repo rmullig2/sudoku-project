@@ -7,7 +7,7 @@ import { FetchScores } from '../api/FetchScores.js';
 class Scores extends React.Component {
   componentWillMount() {
     this.props.FetchScores();
-    console.log(this);
+    //console.log(this);
   }
   render() {
     const test = [ { id: 1, name: "ray", time: 35678 }, { id: 2, name: "xvw", time: 45289 } ]
