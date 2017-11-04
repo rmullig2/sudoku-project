@@ -5,10 +5,6 @@ import { enterValue } from '../../actions.js';
 import './renderSquares.css'
 
 class RenderSquares extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
   keyPress = (event) => {
     console.log(this)
     if (event.key > 0 && event.key < 10) {
@@ -32,9 +28,8 @@ class RenderSquares extends React.Component {
   
   render() {
     return(
-      <div id="grid">
-        {console.log(this.props)}
-        <div className="board-row">
+      <div>
+        <div className="row-top">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
@@ -45,7 +40,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(9)}
           {this.renderSquare(10)}
           {this.renderSquare(11)}
@@ -56,7 +51,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(16)}
           {this.renderSquare(17)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(18)}
           {this.renderSquare(19)}
           {this.renderSquare(20)}
@@ -67,7 +62,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(25)}
           {this.renderSquare(26)}
         </div>
-        <div className="board-row">
+        <div className="row-top">
           {this.renderSquare(27)}
           {this.renderSquare(28)}
           {this.renderSquare(29)}
@@ -78,7 +73,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(34)}
           {this.renderSquare(35)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(36)}
           {this.renderSquare(37)}
           {this.renderSquare(38)}
@@ -89,7 +84,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(43)}
           {this.renderSquare(44)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(45)}
           {this.renderSquare(46)}
           {this.renderSquare(47)}
@@ -100,7 +95,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(52)}
           {this.renderSquare(53)}
         </div>
-        <div className="board-row">
+        <div className="row-top">
           {this.renderSquare(54)}
           {this.renderSquare(55)}
           {this.renderSquare(56)}
@@ -111,7 +106,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(61)}
           {this.renderSquare(62)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(63)}
           {this.renderSquare(34)}
           {this.renderSquare(35)}
@@ -122,7 +117,7 @@ class RenderSquares extends React.Component {
           {this.renderSquare(70)}
           {this.renderSquare(71)}
         </div>
-        <div className="board-row">
+        <div className="row-bottom">
           {this.renderSquare(72)}
           {this.renderSquare(73)}
           {this.renderSquare(74)}

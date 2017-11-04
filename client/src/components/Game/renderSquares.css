@@ -7,10 +7,24 @@ ol, ul {
   padding-left: 30px;
 }
 
-.board-row:after {
+.row {
   clear: both;
   content: "";
   display: table;
+}
+
+.row-top {
+  clear: both;
+  content: "";
+  display: table;
+  border-top: solid 3px;
+}
+
+.row-bottom {
+  clear: both;
+  content: "";
+  display: table;
+  border-bottom: solid 3px;
 }
 
 .status {
