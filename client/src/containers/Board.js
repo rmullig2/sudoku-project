@@ -3,16 +3,12 @@ import Square from '../components/Game/Square.js'
 import { connect } from 'react-redux';
 import './board.css'
 import { enterValue } from '../actions.js';
-//import RenderSquare from '../components/Game/RenderSquare.js';
+import RenderSquares from '../components/Game/RenderSquares.js';
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.keyPress = this.keyPress.bind(this);
-//    Call dispatch(newGame)
-    //this.state = {
-    //  squares: Array(81).fill(""),
-    //};
   }
   
   keyPress = (event) => {
@@ -25,7 +21,6 @@ class Board extends React.Component {
   }
   
   renderSquare(i) {
-    //console.log(this.props.board)
     if (this.props.board.start_board[i]) {
       return (<Square id={i} value={this.props.board.start_board[i]} />)
     }
@@ -38,6 +33,7 @@ class Board extends React.Component {
     const status = 'Game in progress';
     return (
       <div>
+        <RenderSquares />
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
