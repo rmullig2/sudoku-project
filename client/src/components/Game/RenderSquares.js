@@ -8,8 +8,6 @@ class RenderSquares extends React.Component {
   keyPress = (event) => {
     console.log(this)
     if (event.key > 0 && event.key < 10) {
-      console.log(event.target.id)
-      console.log(event.key)
       this.props.dispatch(enterValue(event.target.id, parseInt(event.key)))
     }
     else {
@@ -131,10 +129,6 @@ class RenderSquares extends React.Component {
       </div>
     )
   }
-  //if (this.props.board.start_board[pos])
-  //  return (<Square id={pos} value={this.props.board.start_board[pos]} />)
-  //else
-  //  return (<Square id={pos} value={this.props.board.current_board[pos]} onKeyPress={this.keyPress} />);
 }
 
 function mapStateToProps(state){
@@ -142,4 +136,3 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(RenderSquares)
-//export default RenderSquare

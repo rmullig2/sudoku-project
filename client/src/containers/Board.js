@@ -3,6 +3,7 @@ import Square from '../components/Game/Square.js'
 import { connect } from 'react-redux';
 //import './board.css'
 import RenderSquares from '../components/Game/RenderSquares.js';
+import GameCheck from '../components/Game/GameCheck.js';
 
 class Board extends React.Component {
   constructor(props) {
@@ -10,11 +11,10 @@ class Board extends React.Component {
   }
   
   render() {
-    let status = 'Game in progress';
     return (
       <div>
         <RenderSquares />
-        <span>{status}</span>
+        <GameCheck />
       </div>
     );
   }

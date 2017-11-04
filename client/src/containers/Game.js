@@ -1,6 +1,5 @@
 import React from 'react'
 import Board from './Board.js'
-import Status from '../components/Game/Status.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { NewGame } from '../api/NewGame.js';
@@ -15,9 +14,6 @@ class Game extends React.Component {
       <div className="game">
         <div id="game-board">
           <Board />
-        </div>
-        <div id="game-status">
-          <Status />
         </div>
         <div id="links">
           <a className="link" href="/">Home  </a>

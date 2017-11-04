@@ -8,13 +8,13 @@
 
 #game-status {
   color: red;
-  margin-left: 40%;
+  text-align: center;
   margin-top: 10px;
 }
 
 #links {
   margin-top: 20px;
-  margin-left: 27%;
+  text-align: center;
 }
 
 .game {

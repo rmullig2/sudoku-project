@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Square = ({ id, value, onKeyPress }) => {
-  console.log(id);
   let style = {}
   let left = { borderLeft: "solid 3px" }
   let right= { borderRight: "solid 3px" }
