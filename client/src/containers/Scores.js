@@ -7,13 +7,10 @@ import { FetchScores } from '../api/FetchScores.js';
 class Scores extends React.Component {
   componentWillMount() {
     this.props.FetchScores();
-    //console.log(this);
   }
   render() {
-    const test = [ { id: 1, name: "ray", time: 35678 }, { id: 2, name: "xvw", time: 45289 } ]
     return(
       <div>
-        <p>{console.log(this.props.high_scores)}</p>
         <ScoreList scores={this.props.high_scores} />
         <a href="/">Home </a>
         <a href="/game">Play </a>
