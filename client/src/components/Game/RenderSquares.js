@@ -106,8 +106,8 @@ class RenderSquares extends React.Component {
         </div>
         <div>
           {this.renderSquare(63)}
-          {this.renderSquare(34)}
-          {this.renderSquare(35)}
+          {this.renderSquare(64)}
+          {this.renderSquare(65)}
           {this.renderSquare(66)}
           {this.renderSquare(67)}
           {this.renderSquare(68)}
