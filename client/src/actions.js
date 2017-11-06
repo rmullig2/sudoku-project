@@ -24,8 +24,8 @@ export const getScore = (scores) => {
   }
 }
 
-//export const enterHighScore = (name, score) => {
-//  return {
-//    type: ENTER_HIGH_SCORE, name, score
-//  }
-//}
+export const enterHighScore = (name, score) => {
+  return {
+    type: ENTER_HIGH_SCORE, name, score
+  }
+}

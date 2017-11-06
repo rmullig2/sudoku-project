@@ -4,7 +4,7 @@ export default function boardReducer(state = {}, action) {
   switch (action.type) {
     case NEW_GAME: {
       const { type, start_board, solution_board } = action
-      return { ...state, current_board: [...start_board], start_board, solution_board, start_time: Date.now(), solved: false }
+      return { ...state, current_board: [...start_board], start_board, solution_board, start_time: Date.now(), end_time: null, solved: false }
     }
     
     case ENTER_VALUE: {
