@@ -7,6 +7,7 @@ import About from '../containers/About';
 import Scores from '../containers/Scores';
 import Game from '../containers/Game';
 import Home from './Home.js';
+import EnterScore from '../components/Game/EnterScore.js';
 
 const App = ({ store }) => {
   return (
@@ -17,6 +18,7 @@ const App = ({ store }) => {
           <Route path="/about" component={ About } />
           <Route path="/scores" component={ Scores } />
           <Route path="/game" component={ Game } />
+          <Route path="/enter_score" component = { EnterScore } />
         </Router>
       </Provider>
     </div>

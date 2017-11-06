@@ -15,8 +15,10 @@ class GameCheck extends React.Component {
     }
     let remain = 81 - correct
     if (remain == 0) {
+      this.props.board.end_time = Date.now();
+      this.props.board.solved = true;
       alert("Congratulations, you have solved the puzzle");
-      browserHistory.push('/scores');
+      browserHistory.push('/enter_score');
     }
     else
       alert("You have " + remain + " to go")
