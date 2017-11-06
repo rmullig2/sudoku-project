@@ -1,15 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { solutionCheck } from '../../actions.js';
+import { enterHighScore } from '../../actions.js';
 import { bindActionCreators } from 'redux';
 
 class EnterScore extends React.Component {
   render() {
-    return(
-      <div>
-        {console.log(this.props)}
-      </div>
-    )
+    if (this.props.board.solved) {
+      return(
+        <div>
+          Puzzle solved
+        </div>
+      )
+    }
+    else
+      return(
+        <div>
+          Puzzle not solved
+          {console.log(this.props)}
+        </div>
+      )
   }
 }
 
