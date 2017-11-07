@@ -22,13 +22,12 @@ class EnterScore extends React.Component {
   handleSubmit(event) {
     let solution_time = this.props.board.end_time - this.props.board.start_time;
     PostScore(this.state.name, solution_time);
-    //PostScore(this.state.name, 3453972);
-    browserHistory.push('/scores');
+    browserHistory.push('/');
     event.preventDefault();    
   }
   
   render() {
-    if (!this.props.board.solved) {
+    if (this.props.board.solved) {
       return(
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -42,8 +41,7 @@ class EnterScore extends React.Component {
     else
       return(
         <div>
-          { console.log(this.props.board.solved) }
-          { null }
+          { browserHistory.push('/') }
         </div>
       )
   }
