@@ -11,10 +11,10 @@ class GameCheck extends React.Component {
     let solution = this.props.board.solution_board;
     let correct = 0;
     for (let i = 0; i < 81; i++) {
-      current[i] == solution[i] && correct++
+      current[i] === solution[i] && correct++
     }
     let remain = 81 - correct
-    if (remain == 0) {
+    if (remain === 0) {
       this.props.board.end_time = Date.now();
       this.props.board.solved = true;
       alert("Congratulations, you have solved the puzzle");

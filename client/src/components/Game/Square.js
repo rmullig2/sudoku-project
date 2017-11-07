@@ -5,9 +5,9 @@ const Square = ({ id, value, onKeyPress }) => {
   let left = { borderLeft: "solid 3px" }
   let right= { borderRight: "solid 3px" }
 
-  if (parseInt(id) % 3 == 0)
+  if (parseInt(id) % 3 === 0)
     style = left;
-  else if ((id+1) % 9 == 0)
+  else if ((id+1) % 9 === 0)
     style = right;
   return <input id={id} type="text" className="square" style={style} value={value} onKeyPress={onKeyPress} />
 }

@@ -16,22 +16,24 @@ class EnterScore extends React.Component {
   }
   
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({name: event.target.value});
   }
     
   handleSubmit(event) {
-    let solution_time = this.props.board.end_time = this.props.board.start_time;
-    this.props.PostScore(this.state.name, solution_time);
+    let solution_time = this.props.board.end_time - this.props.board.start_time;
+    PostScore(this.state.name, solution_time);
+    //PostScore(this.state.name, 3453972);
     browserHistory.push('/scores');
+    event.preventDefault();    
   }
   
   render() {
-    if (this.props.board.solved) {
+    if (!this.props.board.solved) {
       return(
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <textarea value={this.state.name} maxlength="3" onChange={this.handleChange} />
+            <input type="text" value={this.state.name} size="3" maxLength="3" onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
@@ -52,7 +54,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({enterHighScore: enterHighScore}, dispatch)
+  return {}
+  //return bindActionCreators({PostScore: PostScore}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EnterScore)
