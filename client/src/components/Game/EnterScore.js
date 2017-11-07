@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { enterHighScore } from '../../actions.js';
-import { bindActionCreators } from 'redux';
 import { PostScore } from '../../api/PostScore.js';
 import { browserHistory } from 'react-router';
 
@@ -29,13 +27,16 @@ class EnterScore extends React.Component {
   render() {
     if (this.props.board.solved) {
       return(
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={this.state.name} size="3" maxLength="3" onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        <div>
+          <h2>Please enter your initials</h2>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Name:
+              <input type="text" value={this.state.name} size="3" maxLength="3" onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       )
     }
     else
@@ -51,9 +52,4 @@ function mapStateToProps(state) {
   return { board: state.board }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {}
-  //return bindActionCreators({PostScore: PostScore}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(EnterScore)
+export default connect(mapStateToProps)(EnterScore)
