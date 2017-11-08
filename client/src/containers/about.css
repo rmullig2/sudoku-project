@@ -1,0 +1,25 @@
+.page {
+  font-size: large;
+  font-weight: bold;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  position: absolute;
+}
+
+.page h1 {
+  font-size: 4em;
+  color: rgb(10, 97, 107);
+}
+
+.page p {
+  font-size: 1.3em;
+}
+
+#lin {
+  font-weight: bold;
+  right: 40%;
+  bottom: 20%;
+  transform: translate(50%,50%);
+  position: absolute;
+}
