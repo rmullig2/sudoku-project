@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 import '../App.css';
-//import * as Actions from '../actions/authActions';
 import About from '../containers/About';
 import Scores from '../containers/Scores';
 import Game from '../containers/Game';

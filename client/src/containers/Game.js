@@ -16,9 +16,9 @@ class Game extends React.Component {
           <Board />
         </div>
         <div id="links">
-          <a className="link" href="/">Home  </a>
-          <a className="link" href="/about">About  </a>
-          <a className="link" href="/scores">Scores</a>
+          <a href="/">Home  </a>
+          <a href="/about">About  </a>
+          <a href="/scores">Scores</a>
         </div>
       </div>
     );

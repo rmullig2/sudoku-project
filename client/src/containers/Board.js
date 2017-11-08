@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-//import './board.css'
 import RenderSquares from '../components/Game/RenderSquares.js';
 import GameCheck from '../components/Game/GameCheck.js';
 

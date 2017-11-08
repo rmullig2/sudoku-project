@@ -8,7 +8,7 @@ class RenderSquares extends React.Component {
   keyPress = (event) => {
     console.log(this)
     if (event.key > 0 && event.key < 10) {
-      this.props.dispatch(enterValue(event.target.id, parseInt(event.key)))
+      this.props.dispatch(enterValue(event.target.id, parseInt(event.key, 10)))
     }
     else {
       this.props.dispatch(enterValue(event.target.id, ""))

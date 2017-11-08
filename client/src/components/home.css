@@ -1,0 +1,28 @@
+body {
+    background-image: url("../sudoku-background.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#press {
+  font-size: large;
+  font-weight: bold;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  position: absolute;
+}
+
+#link {
+  font-size: large;
+  font-weight: bold;
+  right: 50%;
+  bottom: 20%;
+  transform: translate(50%,50%);
+  position: absolute;
+}
+/*
+a {
+  padding: 4em;
+}*/
