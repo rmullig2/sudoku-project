@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { PostScore } from '../../api/PostScore.js';
 import { browserHistory } from 'react-router';
+import './enterScore.css';
 
 class EnterScore extends React.Component {
   constructor(props) {
@@ -29,8 +30,8 @@ class EnterScore extends React.Component {
       return(
         <div>
           <h2>Please enter your initials</h2>
-          <form onSubmit={this.handleSubmit}>
-            <label>
+          <form id="initials" onSubmit={this.handleSubmit}>
+            <label id="name">
               Name:
               <input type="text" value={this.state.name} size="3" maxLength="3" onChange={this.handleChange} />
             </label>
