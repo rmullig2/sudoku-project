@@ -1,0 +1,28 @@
+.page {
+  font-size: large;
+  font-weight: bold;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%,50%);
+  position: absolute;
+}
+
+#lin {
+  font-size: 2em;
+  font-weight: bold;
+  right: 40%;
+  bottom: 20%;
+  transform: translate(50%,50%);
+  position: relative;
+  padding: 2em;
+}
+
+#times {
+  font-size: 3em;
+}
+
+h1 {
+  font-size: 3.5em;
+  text-align: center;
+  color: rgb(39,164,178);
+}
