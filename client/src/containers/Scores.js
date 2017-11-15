@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { FetchScores } from '../api/FetchScores.js';
 import './scores.css';
+import { Link } from 'react-router';
 
 class Scores extends React.Component {
   componentWillMount() {
@@ -17,9 +18,9 @@ class Scores extends React.Component {
           <ScoreList scores={this.props.high_scores} />
         </div>
         <div id="lin">
-          <a href="/">Home </a>
-          <a href="/game">Play </a>
-          <a href="/about">About </a>
+          <Link to="/">Home</Link>
+          <Link to="/game">Play</Link>
+          <Link to="/about">About</Link>
         </div>
       </div>
     )
