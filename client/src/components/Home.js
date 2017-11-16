@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 const Home = () => {
   return(
     <div>
-      <p id="press">Click Play to get started or about to learn more about Sudoku.</p>
+      <h1 id="press">Click Play to get started or about to learn more about Sudoku.</h1>
       <div id="link">
         <Link to="/about">About</Link>
         <Link to="/game">Play</Link>

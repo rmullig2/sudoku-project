@@ -1,5 +1,5 @@
 .page {
-  font-size: large;
+  font-size: 2em;
   font-weight: bold;
   right: 50%;
   bottom: 50%;
@@ -17,6 +17,7 @@
 }
 
 #lin {
+  font-size: 2em;
   font-weight: bold;
   right: 40%;
   bottom: 20%;
