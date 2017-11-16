@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-15';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Testing the About container',() => {
+describe('Testing the History container',() => {
   let wrapper
   beforeEach(() => {
     wrapper = shallow(<History />);
