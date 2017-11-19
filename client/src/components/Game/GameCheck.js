@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router';
 
 class GameCheck extends React.Component {
   onClick = () => {
-    console.log(this.props.board);
+    console.log(this);
     let current = this.props.board.current_board;
     let solution = this.props.board.solution_board;
     let correct = 0;
