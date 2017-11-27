@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../sudoku.png';
 import './home.css';
 import { Link } from 'react-router';
 
