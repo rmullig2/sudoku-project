@@ -26,3 +26,8 @@ h1 {
   text-align: center;
   color: rgb(39,164,178);
 }
+
+#score {
+  margin-left: 1em;
+  font-size: 0.5em;
+}

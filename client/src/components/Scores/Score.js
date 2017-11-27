@@ -18,7 +18,7 @@ class Score extends Component {
     //console.log(this);
     return (<span>{this.props.name} - {Math.floor(this.props.time/60000)} minutes,
     {Math.round(this.props.time/60000%60)} seconds  {this.state.likes}
-    <input type="button" value="Like" onClick={ this.increment } /></span>)
+    <input type="button" id="score" value="Like" onClick={ this.increment } /></span>)
   }
 }
 
