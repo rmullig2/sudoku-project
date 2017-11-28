@@ -13,5 +13,6 @@ class Api::V1::ScoresController < ApplicationController
     score = Score.find(params[:id]);
     !score.likes ? score.likes = 1 : score.likes += 1
     score.save
+    render json: score
   end
 end

@@ -1,4 +1,4 @@
-import { NEW_GAME, ENTER_VALUE, SOLUTION_CHECK, GET_SCORE } from './actionTypes'
+import { NEW_GAME, ENTER_VALUE, SOLUTION_CHECK, GET_SCORE, UPDATE_SCORE } from './actionTypes'
 
 export const newGame = (start_board, solution_board) => {
   return {
@@ -21,5 +21,11 @@ export const solutionCheck = (current_board, solution_board) => {
 export const getScore = (scores) => {
   return {
     type: GET_SCORE, scores
+  }
+}
+
+export const updateScore = (score) => {
+  return {
+    type: UPDATE_SCORE, score
   }
 }
