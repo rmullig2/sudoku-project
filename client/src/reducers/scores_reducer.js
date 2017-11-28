@@ -17,6 +17,9 @@ export default function scoresReducer(state = [], action) {
           return score
         }
       })
+      newState.sort(function(a, b) {
+        return b.likes - a.likes;
+      });
       //debugger
       return newState
     }
