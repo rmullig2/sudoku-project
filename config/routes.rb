@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'game', to: 'games#create'
       get 'high_scores', to: 'scores#index'
       post 'high_scores', to: 'scores#create'
+      patch 'high_scores', to: 'scores#update'
     end
   end
 end
