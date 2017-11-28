@@ -5,7 +5,13 @@ class Api::V1::ScoresController < ApplicationController
   end
   
   def create
-    score = Score.create!(name: params[:name], time: params[:time])
+    score = Score.create!(name: params[:name], time: params[:time], likes: 0)
     render score
+  end
+  
+  def update
+    score = Score.find(params[:id]);
+    !score.likes ? score.likes = 1 : score.likes += 1
+    score.save
   end
 end
