@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 
-let likes = 0;;
-
 class Score extends Component {
   constructor() {
     super();
