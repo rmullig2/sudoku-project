@@ -11,7 +11,7 @@ class Score extends Component {
   }
   
   increment = () => {
-    console.log(this);
+    console.log(this.props);
     this.props.LikeScore(this.props.id);     // update Likes by 1
     //this.setState({
     //  likes: this.state.likes + 1,
