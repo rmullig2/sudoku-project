@@ -16,5 +16,6 @@ export function LikeScore(id) {
     })
     .then(response => response.json())
     .then(score => dispatch(updateScore(score)));
+    //.then(score => console.log(score));
   }
 }

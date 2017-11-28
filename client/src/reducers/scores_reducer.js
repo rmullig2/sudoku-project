@@ -9,7 +9,16 @@ export default function scoresReducer(state = [], action) {
     
     case UPDATE_SCORE: {
       const { type, score } = action
-      return [ ...state, ...score ]
+      let newState = state.map(record => {
+        if (!(record.id == score.id)) {
+          return record
+        }
+        else {
+          return score
+        }
+      })
+      //debugger
+      return newState
     }
     
     default:
